@@ -31,6 +31,7 @@ output:
 
 **Package**: `r packageVersion("EGSEA123")`
 
+![](EGSEA.png){width=133px}
 
 # Abstract
 
