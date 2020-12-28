@@ -13,7 +13,7 @@ author:
     affiliation: CSL Limited, Bio21 Institute, 30 Flemington Road, Parkville, Victoria 3010, Australia 
   - name: Matthew E. Ritchie
     affiliation: The Walter and Eliza Hall Institute of Medical Research, 1G Royal Parade, Parkville, Victoria 3052, Melbourne, Australia; Department of Medical Biology and School of Mathematics and Statistics, The University of Melbourne, Parkville, Victoria 3010, Melbourne, Australia
-date: 22 September 2017
+date: 28 December 2020
 vignette: >
   %\VignetteIndexEntry{Easy and efficient ensemble gene set testing with EGSEA}
   %\VignetteEngine{knitr::rmarkdown}
@@ -115,8 +115,9 @@ The code below loads the preprocessed count matrix from Law *et al.* (2016), per
 ```{r setup, message=FALSE, echo = FALSE}
 library(limma)
 library(edgeR)
+options(timeout=1000)
 url = "http://bioinf.wehi.edu.au/EGSEA/mam.rnaseq.rdata"
-utils::download.file(url, destfile="mam.rnaseq.rdata", mode="wb") 
+utils::download.file(url, destfile="mam.rnaseq.rdata", mode="wb")
 load("mam.rnaseq.rdata")
 names(mam.rnaseq.data)
 dim(mam.rnaseq.data)
@@ -476,6 +477,7 @@ To analyse this dataset, we begin by unzipping the files downloaded from <http:/
 
 ```{r mareadidats, eval=TRUE}
 library(limma)
+options(timeout=1000)
 url = "http://bioinf.wehi.edu.au/EGSEA/arraydata.zip"
 utils::download.file(url, destfile="arraydata.zip", mode="wb")
 utils::unzip("arraydata.zip", exdir = ".")
